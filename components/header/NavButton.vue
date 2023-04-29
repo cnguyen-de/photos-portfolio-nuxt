@@ -2,7 +2,7 @@
   <nuxt-link
     class="px-4 py-2 rounded-lg"
     :class="{
-      'bg-violet-500 dark:bg-white text-gray-100': isActive,
+      'bg-violet-500 dark:bg-white text-gray-100 dark:text-gray-900': isActive,
       'text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-300': !isActive
     }"
     :to="to">

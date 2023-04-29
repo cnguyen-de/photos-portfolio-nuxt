@@ -1,17 +1,17 @@
 <template>
-  <header class="p-2 w-full flex flex-row">
-    <div class="flex justify-center items-center text-xl italic">BichBui</div>
-    <span class="flex-grow"></span>
+  <header class="py-2 w-full flex flex-row">
+    <Logo />
+    <span class="grow-[2]"></span>
     <nav>
       <ul class="flex flex-row gap-1">
-        <NavButton to="/">{{ $t('nav.homepage') }}</NavButton>
         <NavButton to="/explore">Explore</NavButton>
-        <NavButton to="/albums">Albums</NavButton>
-        <NavButton to="/about">About</NavButton>
+        <NavButton to="/albums">{{ $t('nav.album') }}</NavButton>
+        <NavButton to="/about">{{ $t('nav.about') }}</NavButton>
       </ul>
     </nav>
     <span class="flex-grow"></span>
-    <section class="flex gap-2">
+    <section class="flex gap-4">
+      <LanguageSwitcher />
       <ThemeSwitcher />
       <UserHeader />
     </section>

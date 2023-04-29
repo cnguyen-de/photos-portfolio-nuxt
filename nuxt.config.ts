@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: ['nuxt-headlessui', '@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
 
   //Define auto import components locations
-  components: ['~/components/header', '~/components'],
+  components: ['~/components/header', '~/components/album', '~/components'],
 
   devtools: {
     enabled: true
@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     ],
     // trailingSlash: true,
     debug: false,
-    defaultLocale: 'en',
+    defaultLocale: 'vi',
     // strategy: 'no_prefix',
     // strategy: 'prefix',
     // strategy: 'prefix_and_default',
@@ -50,23 +50,14 @@ export default defineNuxtConfig({
     // rootRedirect: '/ja/about-ja',
     dynamicRouteParams: true,
     // customRoutes: 'config',
-    pages: {
-      history: {
-        ja: '/history-ja'
-      },
-      about: {
-        ja: '/about-ja'
-      }
-    },
     // differentDomains: true,
     // skipSettingLocaleOnNavigate: true,
     // detectBrowserLanguage: false,
     detectBrowserLanguage: {
-      useCookie: true
+      useCookie: true,
       // alwaysRedirect: true
-      // cookieKey: 'i18n_redirected',
-      // // cookieKey: 'my_custom_cookie_name',
-      // redirectOn: 'root'
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
     }
   }
 })
