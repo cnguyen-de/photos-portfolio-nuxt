@@ -1,9 +1,9 @@
 {
-  "name": "nuxt-app",
+  "name": "photos-portfolio-v2",
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --open",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -17,6 +17,8 @@
     "nuxt": "^3.4.3",
     "nuxt-headlessui": "^1.1.4",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8"
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "vite": "^4.3.3",
+    "vue": "^3.2.47"
   }
 }

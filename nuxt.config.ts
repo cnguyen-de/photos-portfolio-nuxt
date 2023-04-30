@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     ],
     // trailingSlash: true,
     debug: false,
-    defaultLocale: 'vi',
+    defaultLocale: 'en',
     // strategy: 'no_prefix',
     // strategy: 'prefix',
     // strategy: 'prefix_and_default',
@@ -55,7 +55,7 @@ export default defineNuxtConfig({
     // detectBrowserLanguage: false,
     detectBrowserLanguage: {
       useCookie: true,
-      // alwaysRedirect: true
+      //alwaysRedirect: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
     }

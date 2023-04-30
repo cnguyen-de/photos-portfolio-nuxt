@@ -2,8 +2,8 @@
   <div class="flex items-center">
     <HeadlessMenu as="div" class="relative inline-block text-left">
       <div>
-        <HeadlessMenuButton class="p-1 group rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
-          <UserCircleIcon class="w-8 h-8 text-gray-500 group-hover:dark:text-gray-300 group-hover:text-gray-700" />
+        <HeadlessMenuButton class="group rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
+          <UserCircleIcon class="w-9 h-9 text-gray-500 group-hover:dark:text-gray-300 group-hover:text-gray-700" />
         </HeadlessMenuButton>
       </div>
 

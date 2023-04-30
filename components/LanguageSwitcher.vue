@@ -4,8 +4,8 @@
       <HeadlessListbox v-model="currentLocaleCode">
         <div class="relative">
           <HeadlessListboxButton
-            class="relative w-full cursor-default rounded-lg bg-white py-1 pl-3 pr-8 text-left border border-2 focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 sm:text-sm">
-            <span class="block truncate">{{ currentLanguage.name }}</span>
+            class="relative w-full cursor-default rounded-lg bg-white dark:bg-gray-700 py-2 pl-3 pr-8 text-left border focus:outline-none dark:border-gray-700 focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 sm:text-sm">
+            <span class="block truncate text-gray-500 dark:text-gray-300">{{ currentLanguage.name }}</span>
             <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
             </span>
@@ -43,9 +43,9 @@
 </template>
 <script setup lang="ts">
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/24/solid'
+
 const { locale, locales, setLocale } = useI18n()
 const currentLocaleCode = ref(locale.value)
-const switchLocalePath = useSwitchLocalePath()
 
 const availableLocales = computed(() => {
   return locales.value
@@ -57,5 +57,10 @@ const currentLanguage = computed(() => {
 
 watch(currentLocaleCode, (newLanguage) => {
   setLocale(newLanguage)
+  useCookie('i18n_redirected', newLanguage)
+})
+onMounted(() => {
+  currentLocaleCode.value =
+    typeof useCookie('i18n_redirected').value === 'string' ? useCookie('i18n_redirected').value : locale.value
 })
 </script>

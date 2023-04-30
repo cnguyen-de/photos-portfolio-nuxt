@@ -13,9 +13,9 @@
 </template>
 
 <script setup lang="ts">
-// Change tailwindcss theme
 import { ref, watch } from 'vue'
 
+// TODO: Make persistent theme
 const theme = ref(false)
 watch(theme, (newTheme) => {
   if (!newTheme) {

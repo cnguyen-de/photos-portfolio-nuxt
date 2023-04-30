@@ -11,6 +11,6 @@
 </template>
 
 <script setup lang="ts">
-// TODO: Update album type
+// TODO: Update album with proper type
 const props = defineProps({ album: Object })
 </script>
