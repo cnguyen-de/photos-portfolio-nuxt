@@ -1,5 +1,5 @@
 <template>
-  <header class="py-2 w-full flex flex-row">
+  <header class="p-2 w-full hidden md:flex flex-row">
     <Logo />
     <span class="grow-[2]"></span>
     <nav>
@@ -16,6 +16,14 @@
       <UserHeader />
     </section>
   </header>
+
+  <header class="p-2 w-full flex flex-row md:hidden">
+    <Logo />
+    <span class="flex-grow"></span>
+    <Bars2Icon class="w-6 h-6" />
+  </header>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Bars2Icon } from '@heroicons/vue/24/outline'
+</script>

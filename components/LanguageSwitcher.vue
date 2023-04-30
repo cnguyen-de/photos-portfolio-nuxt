@@ -57,7 +57,8 @@ const currentLanguage = computed(() => {
 
 watch(currentLocaleCode, (newLanguage) => {
   setLocale(newLanguage)
-  useCookie('i18n_redirected', newLanguage)
+  const i18nCookie = useCookie('i18n_redirected')
+  i18nCookie.value = newLanguage
 })
 onMounted(() => {
   currentLocaleCode.value =

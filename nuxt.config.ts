@@ -48,16 +48,16 @@ export default defineNuxtConfig({
     // strategy: 'prefix_and_default',
     strategy: 'prefix_except_default',
     // rootRedirect: '/ja/about-ja',
-    dynamicRouteParams: true,
+    dynamicRouteParams: true
     // customRoutes: 'config',
     // differentDomains: true,
     // skipSettingLocaleOnNavigate: true,
     // detectBrowserLanguage: false,
-    detectBrowserLanguage: {
-      useCookie: true,
-      //alwaysRedirect: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root'
-    }
+    // detectBrowserLanguage: {
+    //   useCookie: true,
+    //   alwaysRedirect: true,
+    //   cookieKey: 'i18n_redirected',
+    //   redirectOn: 'root'
+    // }
   }
 })

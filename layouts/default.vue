@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-full mx-auto max-w-5xl">
+  <div class="flex flex-col h-full mx-auto max-w-6xl">
     <AppHeader />
     <div class="min-h-[calc(100vh-98px)]">
       <!-- <Navigator v-if="path !== '/'" /> -->
