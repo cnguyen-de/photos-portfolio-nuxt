@@ -1,10 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // plugin modules
-  modules: ['nuxt-headlessui', '@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
+  modules: ['nuxt-headlessui', '@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@pinia/nuxt'],
 
   //Define auto import components locations
   components: ['~/components/header', '~/components/album', '~/components'],
+  pinia: {
+    autoImports: [
+      // automatically imports `defineStore`
+      'defineStore', // import { defineStore } from 'pinia'
+      ['defineStore', 'definePiniaStore'] // import { defineStore as definePiniaStore } from 'pinia'
+    ]
+  },
 
   devtools: {
     enabled: true

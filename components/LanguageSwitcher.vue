@@ -45,6 +45,7 @@
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/24/solid'
 
 const { locale, locales, setLocale } = useI18n()
+const i18nCookie = useCookie('i18n_redirected')
 const currentLocaleCode = ref(locale.value)
 
 const availableLocales = computed(() => {
@@ -57,7 +58,6 @@ const currentLanguage = computed(() => {
 
 watch(currentLocaleCode, (newLanguage) => {
   setLocale(newLanguage)
-  const i18nCookie = useCookie('i18n_redirected')
   i18nCookie.value = newLanguage
 })
 onMounted(() => {

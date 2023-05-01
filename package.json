@@ -18,7 +18,13 @@
     "nuxt-headlessui": "^1.1.4",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.8",
+    "prisma": "^4.13.0",
     "vite": "^4.3.3",
     "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.9",
+    "@prisma/client": "^4.13.0",
+    "pinia": "^2.0.35"
   }
 }
