@@ -11,7 +11,7 @@
   "devDependencies": {
     "@heroicons/vue": "^2.0.17",
     "@nuxt/devtools": "^0.4.5",
-    "@nuxtjs/i18n": "8.0.0-beta.11",
+    "@nuxtjs/i18n": "8.0.0-beta.10",
     "@nuxtjs/tailwindcss": "^6.6.7",
     "@types/node": "^18",
     "nuxt": "^3.4.3",

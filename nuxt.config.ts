@@ -17,16 +17,12 @@ export default defineNuxtConfig({
     enabled: true
   },
   i18n: {
-    experimental: {
-      jsTsFormatResource: true
-    },
     precompile: {
       strictMessage: false,
       escapeHtml: true
     },
     langDir: 'locales',
     lazy: true,
-    baseUrl: 'http://localhost:3000',
     locales: [
       {
         code: 'en',
@@ -50,10 +46,10 @@ export default defineNuxtConfig({
     // trailingSlash: true,
     debug: false,
     defaultLocale: 'en',
-    // strategy: 'no_prefix',
+    strategy: 'no_prefix',
     // strategy: 'prefix',
     // strategy: 'prefix_and_default',
-    strategy: 'prefix_except_default',
+    // strategy: 'prefix_except_default',
     // rootRedirect: '/ja/about-ja',
     dynamicRouteParams: true
     // customRoutes: 'config',

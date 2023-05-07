@@ -5,8 +5,10 @@
 - Tailwindcss
 - Fully customized light and dark themes
 - Internationalization: German, English, Vietnamese
-- Prisma + Planetscale
+- Prisma
+- Planetscale DB
 - C2 Object Storage
+- Firebase Auth
 - Namecheap domain
 -
 
@@ -23,7 +25,7 @@ erDiagram
     }
     COMMENT {
         string id
-        string deliveryAddress
+        string content
     }
 ```
 
@@ -39,3 +41,9 @@ erDiagram
   - Instead of component -> action -> pinia -> nuxt server api with useFetch you need to
     component -> useAsyncData(action) -> pinia -> nuxt server api (??)
     ) - should probably read the docs before doing stuff
+
+## Time tracking
+
+- 29.05.2023: 8h
+- 30.05.2023: 1h
+- 31.05.2023: 2h
