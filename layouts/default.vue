@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col h-full mx-auto max-w-6xl">
-    <AppHeader />
-    <div class="min-h-[calc(100vh-98px)]">
+  <div class="DefaultLayout mx-auto flex h-full max-w-6xl flex-col">
+    <AppHeader class="px-4" />
+    <div class="min-h-[calc(100vh-98px)] px-4">
       <!-- <Navigator v-if="path !== '/'" /> -->
-      <div class="mt-4">
+      <div>
         <slot />
       </div>
     </div>
@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute()
-const path = computed(() => route.path)
+const route = useRoute();
+const path = computed(() => route.path);
 </script>

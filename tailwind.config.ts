@@ -1,14 +1,14 @@
-// Define tailwind config with class based dark mode
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ['class'],
+  darkMode: ["class"],
   theme: {
     extend: {
       colors: {
-        primary: '#0000FF',
-        secondary: '#2D2D2D',
-        tertiary: '#3C3C3C'
-      }
-    }
-  }
+        primary: "hsl(var(--color-primary) / <alpha-value>)",
+        secondary: "#2D2D2D",
+        tertiary: "#3C3C3C",
+      },
+    },
+  },
   // plugins: [require('@tailwindcss/forms')]
-}
+};

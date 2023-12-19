@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   // plugin modules
-  modules: ['nuxt-headlessui', '@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@pinia/nuxt'],
+  modules: ['nuxt-headlessui', '@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@pinia/nuxt', 'nuxt-vuefire'],
 
   //Define auto import components locations
   components: ['~/components/header', '~/components/album', '~/components'],
@@ -12,16 +13,12 @@ export default defineNuxtConfig({
       ['defineStore', 'definePiniaStore'] // import { defineStore as definePiniaStore } from 'pinia'
     ]
   },
-
+ 
   devtools: {
     enabled: true
   },
   i18n: {
     vueI18n: './i18n.config.ts',
-    precompile: {
-      strictMessage: false,
-      escapeHtml: true
-    },
     langDir: 'locales',
     lazy: true,
     locales: [
@@ -62,5 +59,20 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
     }
-  }
+  },
+  vuefire: {
+    auth: {
+      enabled: true,
+      sessionCookie: true,
+    },
+    config: {
+      apiKey: 'AIzaSyAq-TyAZb7OS_NVETKkKeVE9VCD_PmV2_Q',
+      authDomain: 'auth.bichbui.com',
+      projectId: 'photos-portfolio-300318',
+      storageBucket: 'photos-portfolio-300318.appspot.com',
+      messagingSenderId: '1015819770341',
+      appId: '1:1015819770341:web:21a627b9b289f8a664f70c',
+      measurementId: 'G-4XLTWFS73M'
+    }
+  },
 })
