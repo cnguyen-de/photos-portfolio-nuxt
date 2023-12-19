@@ -3,7 +3,7 @@
     class="rounded-lg px-4 py-2 font-medium"
     :class="{
       'brush-wrap text-gray-100 dark:text-gray-900': isActive,
-      'text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-300':
+      'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200':
         !isActive,
     }"
     :to="to"
@@ -78,7 +78,7 @@ const route = useRoute();
 const isActive = computed(() => route.path === props.to);
 </script>
 
-<style scoped>
+<style>
 /* create wrapper */
 .brush-wrap {
   position: relative;
@@ -88,21 +88,13 @@ const isActive = computed(() => route.path === props.to);
 /* clipping/animating object (pseudo element) */
 .brush-wrap:before {
   content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: black;
-  z-index: 0;
+  @apply absolute left-0 top-0 z-0 h-full w-full bg-black dark:bg-white;
   clip-path: url(#clip);
   /* applying clip animation */
 }
 
 .brush-wrap p {
-  margin: 0;
-  color: white;
-  font-style: italic;
+  @apply m-0 italic text-white dark:text-black dark:drop-shadow-sm;
   filter: drop-shadow(0px 0px 2px black);
 }
 </style>

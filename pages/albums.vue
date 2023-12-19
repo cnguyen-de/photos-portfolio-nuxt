@@ -1,23 +1,19 @@
-<template>
-  <div class="py-4">
-    <div class="grid grid-cols-3 gap-8">
-      <AlbumThumbnail
-        v-for="album in albumsF"
-        :key="album?.id"
-        :album="album"
-      />
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { useAlbumsStore } from "../store/albums.store";
 import { collection } from "firebase/firestore";
-
+/* 
+import { useAlbumsStore } from "../store/albums.store";
 const store = useAlbumsStore();
 await useAsyncData("albums", () => store.fetchAlbums());
 const { albums } = store;
+ */
 const db = useFirestore();
-const albumsF = useCollection(collection(db, "albums"));
-console.log(albumsF.value);
+const albums = useCollection(collection(db, "albums"));
 </script>
+
+<template>
+  <div
+    class="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5"
+  >
+    <AlbumThumbnail v-for="album in albums" :key="album?.id" :album="album" />
+  </div>
+</template>

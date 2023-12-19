@@ -41,9 +41,12 @@ erDiagram
   - Instead of component -> action -> pinia -> nuxt server api with useFetch you need to
     component -> useAsyncData(action) -> pinia -> nuxt server api (??)
     ) - should probably read the docs before doing stuff
+- Prettier 3.1.1 broke vs code plugin
 
 ## Time tracking
 
 - 29.05.2023: 8h
 - 30.05.2023: 1h
 - 31.05.2023: 2h
+- 18.12.2023: 4h
+- 19.12.2023: 3h
