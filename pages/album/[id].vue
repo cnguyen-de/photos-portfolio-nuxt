@@ -6,7 +6,6 @@ const albums = useCollection(collection(db, "albums"));
 const photos = computed(
   () => albums.value?.find((album) => album.id === route.params.id)?.photos,
 );
-console.log(photos.value);
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :to="`album/${album.id}`">
     <div class="">
-      <Photo :src="album.photos[0].url" class="aspect-square" />
+      <Photo :src="album.photos[0].url" class="aspect-square object-cover" />
       <div class="pt-2">
         <h3 class="text-base font-bold text-gray-900 dark:text-gray-100">
           {{ album.title }}

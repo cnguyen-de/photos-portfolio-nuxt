@@ -1,7 +1,7 @@
 <template>
   <div class="DefaultLayout mx-auto flex h-full max-w-6xl flex-col">
     <AppHeader class="px-4" />
-    <div class="min-h-[calc(100vh-98px)] p-4">
+    <div class="min-h-[calc(100vh-115px)] p-4">
       <!-- <Navigator v-if="path !== '/'" /> -->
       <div>
         <slot />

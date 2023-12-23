@@ -1,16 +1,28 @@
 # Photos Portfolio for bichbui.com
 
+Technologies:
+
+- Nuxt 3
 - Headless UI
 - Heroicons
 - Tailwindcss
 - Fully customized light and dark themes
 - Internationalization: German, English, Vietnamese
+- Firebase Auth
+- Firebase firestore
+- Namecheap domain
+- Vercel hosting
+
+Features:
+
+- User authentication
+- View albums and photos
+
+Scraped Ideas:
+
 - Prisma
 - Planetscale DB
 - C2 Object Storage
-- Firebase Auth
-- Namecheap domain
--
 
 ## Docs
 
@@ -49,4 +61,8 @@ erDiagram
 - 30.05.2023: 1h
 - 31.05.2023: 2h
 - 18.12.2023: 4h
-- 19.12.2023: 3h
+- 19.12.2023: 4h
+
+---
+
+Total: 19h
