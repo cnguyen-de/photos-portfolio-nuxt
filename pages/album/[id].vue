@@ -10,14 +10,14 @@ const photos = computed(
 
 <template>
   <div class="container">
-    <figure v-for="photo of photos" :key="photo.id">
-      <Photo :src="photo?.url" />
+    <figure v-for="(photo, index) of photos" :key="photo.id">
+      <Photo :url="photo?.url" :class="{ transition: index === 0 }" />
     </figure>
   </div>
 </template>
 <style scoped>
 .container {
-  column-count: 3;
+  column-count: 2;
   column-gap: 16px;
 }
 
@@ -37,5 +37,8 @@ figure > img {
   .container {
     column-count: 1;
   }
+}
+img.transition {
+  view-transition-name: selected-film;
 }
 </style>
