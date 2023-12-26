@@ -16,7 +16,7 @@ Technologies:
 Features:
 
 - User authentication
-- View albums and photos
+- View albums and photos with View Transition API
 
 Scraped Ideas:
 
@@ -63,7 +63,8 @@ erDiagram
 - 18.12.2023: 4h
 - 19.12.2023: 4h
 - 23.12.2023: 1h
+- 26.12.2023: 2h
 
 ---
 
-Total: 20h
+Total: 22h

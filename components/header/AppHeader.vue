@@ -25,17 +25,26 @@
 </template>
 
 <script setup lang="ts">
-import { Bars2Icon } from "@heroicons/vue/24/outline";
+import { Bars2Icon } from "@heroicons/vue/24/outline"
 </script>
 
 <style scoped>
 header {
   @apply sticky top-0 z-[1] w-full flex-row p-4;
+  view-transition-name: header;
+  contain: layout;
 }
 header::after {
   content: "";
-  @apply absolute inset-0 z-[-1] h-[130%] bg-gradient-to-b from-white/70 to-transparent dark:from-stone-900/50;
-  mask: linear-gradient(to top, transparent, black 30%);
+  @apply absolute inset-0 z-[-1] h-[110%] bg-gradient-to-b from-white/90 to-white/40 dark:from-stone-900/50;
+  mask: linear-gradient(to top, transparent, black 10%);
   backdrop-filter: blur(5px);
+}
+</style>
+<style>
+::view-transition-old(header),
+::view-transition-new(header) {
+  width: 100%;
+  height: 72px;
 }
 </style>
