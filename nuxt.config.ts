@@ -1,27 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   experimental: {
-    viewTransition: true,
+    viewTransition: true
   },
   ssr: false,
   // plugin modules
-  modules: [
-    "nuxt-headlessui",
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/i18n",
-    "@pinia/nuxt",
-    "nuxt-vuefire",
-    "@nuxt/image",
-  ],
+  modules: ["nuxt-headlessui", "@nuxtjs/tailwindcss", "@nuxtjs/i18n", "@pinia/nuxt", "nuxt-vuefire", "@nuxt/image"],
 
   //Define auto import components locations
   components: ["~/components/header", "~/components/album", "~/components"],
   pinia: {
-    storesDirs: ["./stores/**"],
+    storesDirs: ["./store/**"]
   },
 
   devtools: {
-    enabled: true,
+    enabled: true
   },
   i18n: {
     vueI18n: "./i18n.config.ts",
@@ -32,20 +25,20 @@ export default defineNuxtConfig({
         code: "en",
         iso: "en-US",
         file: "en.json",
-        name: "English",
+        name: "English"
       },
       {
         code: "vi",
         iso: "vi-vn",
         files: ["vi.json"],
-        name: "Tiếng Việt",
+        name: "Tiếng Việt"
       },
       {
         code: "de",
         iso: "de-de",
         files: ["de.json"],
-        name: "Deutsch",
-      },
+        name: "Deutsch"
+      }
     ],
     // trailingSlash: true,
     debug: false,
@@ -63,13 +56,13 @@ export default defineNuxtConfig({
       useCookie: true,
       alwaysRedirect: true,
       cookieKey: "i18n_redirected",
-      redirectOn: "root",
-    },
+      redirectOn: "root"
+    }
   },
   vuefire: {
     auth: {
       enabled: true,
-      sessionCookie: true,
+      sessionCookie: true
     },
     config: {
       apiKey: "AIzaSyAq-TyAZb7OS_NVETKkKeVE9VCD_PmV2_Q",
@@ -78,7 +71,7 @@ export default defineNuxtConfig({
       storageBucket: "photos-portfolio-300318.appspot.com",
       messagingSenderId: "1015819770341",
       appId: "1:1015819770341:web:21a627b9b289f8a664f70c",
-      measurementId: "G-4XLTWFS73M",
-    },
-  },
-});
+      measurementId: "G-4XLTWFS73M"
+    }
+  }
+})

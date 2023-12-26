@@ -4,7 +4,7 @@
     <span class="grow-[2]"></span>
     <nav>
       <ul class="flex flex-row gap-1">
-        <NavButton to="/explore">Explore</NavButton>
+        <NavButton to="/">Explore</NavButton>
         <NavButton to="/albums">{{ $t("nav.album") }}</NavButton>
         <NavButton to="/about">{{ $t("nav.about") }}</NavButton>
       </ul>
@@ -26,25 +26,18 @@
 
 <script setup lang="ts">
 import { Bars2Icon } from "@heroicons/vue/24/outline"
+//bg-gradient-to-b from-transparent via-white/10 via-[90%] to-transparent dark:from-stone-900/50
 </script>
 
 <style scoped>
 header {
-  @apply sticky top-0 z-[1] w-full flex-row p-4;
+  @apply sticky top-0 z-[1] w-full flex-row p-4 backdrop-blur-sm;
   view-transition-name: header;
-  contain: layout;
 }
 header::after {
   content: "";
-  @apply absolute inset-0 z-[-1] h-[110%] bg-gradient-to-b from-white/90 to-white/40 dark:from-stone-900/50;
+  @apply absolute inset-0 z-[-1] h-[110%];
+
   mask: linear-gradient(to top, transparent, black 10%);
-  backdrop-filter: blur(5px);
-}
-</style>
-<style>
-::view-transition-old(header),
-::view-transition-new(header) {
-  width: 100%;
-  height: 72px;
 }
 </style>
