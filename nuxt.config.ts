@@ -5,7 +5,15 @@ export default defineNuxtConfig({
   },
   ssr: false,
   // plugin modules
-  modules: ["nuxt-headlessui", "@nuxtjs/tailwindcss", "@nuxtjs/i18n", "@pinia/nuxt", "nuxt-vuefire", "@nuxt/image"],
+  modules: [
+    "nuxt-headlessui",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/i18n",
+    "@pinia/nuxt",
+    "nuxt-vuefire",
+    "@nuxt/image",
+    "@vueuse/nuxt"
+  ],
 
   //Define auto import components locations
   components: ["~/components/header", "~/components/album", "~/components"],

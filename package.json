@@ -15,6 +15,8 @@
     "@nuxtjs/i18n": "8.0.0-rc.11",
     "@nuxtjs/tailwindcss": "^6.10.1",
     "@types/node": "^20.10.1",
+    "@vueuse/core": "^10.7.0",
+    "@vueuse/nuxt": "^10.7.0",
     "nuxt": "^3.8.2",
     "nuxt-headlessui": "^1.1.4",
     "prettier": "^3.1.0",

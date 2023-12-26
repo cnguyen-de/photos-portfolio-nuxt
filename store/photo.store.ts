@@ -1,13 +1,11 @@
 export const usePhotoStore = defineStore("photo", {
   state: () => ({
-    photo: null
+    photos: null
   }),
   getters: {
-    showFullscreenPhoto: (state) => !!state.photo
-  },
-  actions: {
-    openFullscreenPhotos(photo: any) {
-      this.photo = photo
+    getCurrentPhotoById: (state) => (id: string) => {
+      return state.photos.find((photo: any) => photo.id === id)
     }
-  }
+  },
+  actions: {}
 })

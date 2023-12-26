@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { collection } from "firebase/firestore"
 const route = useRoute()
-const db = useFirestore()
-const albums = useCollection(collection(db, "albums"))
+const albums = computed(() => useAlbumsStore().albums)
 const photos = computed(() => albums.value?.find((album) => album.id === route.params.id)?.photos)
 
 const photoStore = usePhotoStore()
@@ -12,10 +10,10 @@ const active = useState()
 <template>
   <div class="container">
     <figure v-for="(photo, index) of photos" :key="photo.id">
-      <NuxtLink :to="'/view'">
+      <NuxtLink :to="`/photo/${photo.id}`">
         <Photo
           :url="photo?.url"
-          @click="photoStore.photo = photo"
+          @click="photoStore.photos = photos"
           @click.native="active = photo.id"
           :class="{ transition: index === 0, active: active === photo?.id }" />
       </NuxtLink>
