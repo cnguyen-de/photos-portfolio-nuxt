@@ -1,6 +1,6 @@
 # TODO
 
-- Mobile navbar
+- Mobile navbar 🚧 WIP
 - Observer API Infinite Scroll on index page
 - Admin right & right endpoint ✅
 - fullscreen photo viewer 🚧 WIP
@@ -72,7 +72,8 @@ erDiagram
 - 19.12.2023: 4h
 - 23.12.2023: 1h
 - 26.12.2023: 5h
+- 02.01.2024: 3h
 
 ---
 
-Total: 25h
+Total: 28h

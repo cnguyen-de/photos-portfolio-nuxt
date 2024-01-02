@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link
+  <NuxtLink
     class="text-shadow rounded-lg px-4 py-2 font-medium"
     :class="{
       'brush-wrap text-gray-100 dark:text-gray-900': isActive,
@@ -9,7 +9,7 @@
     <p class="z-[2]">
       <slot></slot>
     </p>
-  </nuxt-link>
+  </NuxtLink>
 
   <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg">
     <defs>
