@@ -1,26 +1,43 @@
-@import 'inter.css';
-@import 'nunito.css';
+@import "inter.css";
+@import "nunito.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
-    :root {
-      /* For hsl(198deg 93% 60% / <alpha-value>) */
-      --color-primary: 0deg 0% 10%;
-    }
+  :root {
+    /* For hsl(198deg 93% 60% / <alpha-value>) */
+    --color-primary: 0deg 0% 10%;
+  }
+  .dropshadow-light {
+    -webkit-filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.9));
+    filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.9));
+  }
+  .dropshadow-dark {
+    -webkit-filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.9));
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.9));
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    @apply dropshadow-light dark:dropshadow-dark;
   }
 
-html, body {
-    height: 100%;
-    font-family: 'Nunito';
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Nunito";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #__nuxt {
-    @apply bg-stone-50 dark:bg-stone-900 text-gray-800 dark:text-gray-100
+  @apply bg-stone-50 text-gray-800 dark:bg-stone-900 dark:text-gray-100;
 }
 
 .container {

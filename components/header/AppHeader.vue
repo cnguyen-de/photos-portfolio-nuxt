@@ -1,5 +1,5 @@
 <template>
-  <header class="hidden flex-row md:flex">
+  <header class="normal hidden flex-row md:flex">
     <Logo class="z-[2]" />
     <span class="grow-[2]"></span>
     <nav>
