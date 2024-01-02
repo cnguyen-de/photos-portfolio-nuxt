@@ -1,6 +1,6 @@
 <template>
-  <footer class="p-2 text-gray-500 text-center">
-    <p>&copy; {{ currentYear }} BichBui.com</p>
+  <footer class="p-2 text-center text-gray-500">
+    <p>BichBui.com &copy; 2020 - {{ currentYear }}</p>
   </footer>
 </template>
 

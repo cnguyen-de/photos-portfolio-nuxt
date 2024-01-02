@@ -1,3 +1,11 @@
+# TODO
+
+- Mobile navbar
+- Observer API Infinite Scroll on index page
+- Admin right & right endpoint ✅
+- fullscreen photo viewer
+- editor mode
+
 # Photos Portfolio for bichbui.com
 
 Technologies:
@@ -63,8 +71,8 @@ erDiagram
 - 18.12.2023: 4h
 - 19.12.2023: 4h
 - 23.12.2023: 1h
-- 26.12.2023: 4h
+- 26.12.2023: 5h
 
 ---
 
-Total: 24h
+Total: 25h

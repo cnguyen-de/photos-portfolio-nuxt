@@ -1,11 +1,8 @@
 <script setup lang="ts">
-/* 
-import { useAlbumsStore } from "../store/albums.store";
-const store = useAlbumsStore();
-await useAsyncData("albums", () => store.fetchAlbums());
-const { albums } = store;
- */
 const albums = computed(() => useAlbumsStore().albums)
+
+const editorStore = useEditorStore()
+editorStore.getAdminStatus()
 </script>
 
 <template>

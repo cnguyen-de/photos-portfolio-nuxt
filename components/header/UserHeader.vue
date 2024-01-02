@@ -35,7 +35,7 @@
                 <div class="inline-block break-keep font-bold">{{ user?.displayName }}</div>
               </div>
 
-              <UserMenuItem>
+              <UserMenuItem @click="toggleAdminMode()">
                 <WrenchScrewdriverIcon class="h-6 w-6"></WrenchScrewdriverIcon>
                 <span> Admin mode </span>
               </UserMenuItem>
@@ -78,5 +78,10 @@ const login = () => {
 
 const logout = () => {
   auth.signOut()
+}
+
+const editorStore = useEditorStore()
+const toggleAdminMode = () => {
+  editorStore.isEditing = !editorStore.isEditing
 }
 </script>
