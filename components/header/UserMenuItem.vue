@@ -1,5 +1,5 @@
 <script setup lang="ts">
-withDefaults(defineProps<{ color: "red" | "primary" }>(), {
+withDefaults(defineProps<{ color?: "red" | "primary" }>(), {
   color: "primary"
 })
 </script>

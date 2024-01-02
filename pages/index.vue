@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { useSessionStorage } from "@vueuse/core"
+
 const photoStore = usePhotoStore()
 const albums = computed(() => useAlbumsStore().albums)
+const shuffledPhotos = useSessionStorage("photos", [])
+const photoCount = ref(12)
 
 // Merge all photos in all albums together and shuffle them
 const shuffleAllPhotos = () => {
@@ -13,19 +17,19 @@ const shuffleAllPhotos = () => {
     .map(({ value }) => value)
 }
 
-const photos = computed(() => {
-  // Get photos from session storage if they exist so that they don't get re-randomized on every page load
+const morePhotos = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" })
+
+  shuffledPhotos.value = shuffleAllPhotos()
+}
+const truncatedPhotos = computed(() => {
   const photosFromSessionStorage = JSON.parse(sessionStorage.getItem("photos") ?? "[]")
-  if (photosFromSessionStorage?.length > 0) {
-    return photosFromSessionStorage
+  if (photosFromSessionStorage?.length === 0) {
+    shuffledPhotos.value = shuffleAllPhotos()
   }
-  const randomizedPhotos = shuffleAllPhotos()
-  sessionStorage.setItem("photos", JSON.stringify(randomizedPhotos))
-  return randomizedPhotos
+  return shuffledPhotos.value?.slice(0, photoCount.value)
 })
-const truncatedPhotos = computed(() => photos.value?.slice(0, 10))
 const active = useState()
-//TODO infinite scroll w/ intersection observer api
 </script>
 <template>
   <div class="container">
@@ -38,6 +42,11 @@ const active = useState()
           @click.native="active = photo.id" />
       </NuxtLink>
     </figure>
+  </div>
+  <div class="mt-8 flex w-full justify-center">
+    <button class="m-auto rounded-md border border-primary px-3 py-2 text-xl hover:bg-primary/10" @click="morePhotos()">
+      {{ $t("home.more") }}
+    </button>
   </div>
 </template>
 <style scoped>
