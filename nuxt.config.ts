@@ -81,5 +81,6 @@ export default defineNuxtConfig({
       appId: "1:1015819770341:web:21a627b9b289f8a664f70c",
       measurementId: "G-4XLTWFS73M"
     }
-  }
+  },
+  image: {}
 })
