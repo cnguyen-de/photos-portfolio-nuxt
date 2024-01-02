@@ -84,6 +84,7 @@ const isActive = computed(() => route.path === props.to)
 .brush-wrap:before {
   content: "";
   @apply absolute left-0 top-0 z-0 h-full w-full bg-black dark:bg-white;
+  -webkit-clip-path: url(#clip);
   clip-path: url(#clip);
   /* applying clip animation */
 }

@@ -1,14 +1,18 @@
 <template>
   <div class="text-justify text-base text-black dark:text-white md:pl-48 md:pt-4">
+    <div class="mb-4 flex flex-row">
+      <NavButton to="/tos"><span class="font-bold">Terms Of Service</span></NavButton>
+      <NavButton to="/privacy"><span class="font-bold">Privacy Policy</span></NavButton>
+    </div>
     <h1>Website Terms and Conditions of Use</h1>
 
     <h2>1. Terms</h2>
 
     <p>
-      By accessing this Website, accessible from https://bichbui.com, you are agreeing to be bound by these Website
-      Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws.
-      If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in
-      this Website are protected by copyright and trade mark law.
+      By accessing this Website, accessible from bichbui.com, you are agreeing to be bound by these Website Terms and
+      Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you
+      disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this
+      Website are protected by copyright and trade mark law.
     </p>
 
     <h2>2. Use License</h2>
@@ -94,5 +98,11 @@ h1,
 h2,
 p {
   padding: 8px 0 8px 0;
+}
+h1 {
+  @apply text-2xl font-bold;
+}
+h2 {
+  @apply text-xl;
 }
 </style>
