@@ -4,14 +4,14 @@ const photoStore = usePhotoStore()
 const router = useRouter()
 const onClick = () => {
   photoStore.photos = null
-  router.go(-1)
+  if (history.length > 1) {
+    router.go(-1)
+  } else {
+    router.push(`/album/${albumToReturnTo.value.id}`)
+  }
 }
-
-const currentPhotoUrl = ref(null)
-onMounted(() => {
-  currentPhotoUrl.value = photoStore.getCurrentPhotoById(route.params.id).url
-})
-// TODO make this work on refresh
+const albumToReturnTo = computed(() => photoStore.getAlbumToReturnTo(route.params.id))
+const currentPhotoUrl = computed(() => photoStore.getCurrentPhotoById(route.params.id)?.url)
 </script>
 <template>
   <div

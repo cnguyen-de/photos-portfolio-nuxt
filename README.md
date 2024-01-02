@@ -3,7 +3,7 @@
 - Mobile navbar 🚧 WIP
 - Observer API Infinite Scroll on index page
 - Admin right & right endpoint ✅
-- fullscreen photo viewer 🚧 WIP
+- fullscreen photo viewer ✅
 - editor mode
 
 # Photos Portfolio for bichbui.com
