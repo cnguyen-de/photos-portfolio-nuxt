@@ -20,8 +20,7 @@
 </template>
 
 <script setup lang="ts">
-// TODO: Update album with proper type
-const props = defineProps({ album: Object })
+defineProps({ album: Object })
 const active = useState()
 </script>
 

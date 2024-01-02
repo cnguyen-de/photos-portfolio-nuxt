@@ -25,7 +25,7 @@ onMounted(() => {
     <span class="grow-[2]"></span>
     <nav>
       <ul class="flex flex-row gap-1">
-        <NavButton to="/">Explore</NavButton>
+        <NavButton to="/">{{ $t("nav.homepage") }}</NavButton>
         <NavButton to="/albums">{{ $t("nav.album") }}</NavButton>
         <!-- <NavButton to="/about">{{ $t("nav.about") }}</NavButton> -->
       </ul>
