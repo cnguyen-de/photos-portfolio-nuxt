@@ -2,8 +2,8 @@
 
 - Mobile navbar 🚧 WIP
 - Observer API Infinite Scroll on index page
-- Admin right & right endpoint ✅
-- fullscreen photo viewer ✅
+- fullscreen photo viewer: back to album, navigation buttons
+- Album page (id) -> show album title, description, breadcrumb
 - editor mode
 
 # Photos Portfolio for bichbui.com

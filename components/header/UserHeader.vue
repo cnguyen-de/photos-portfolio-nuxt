@@ -1,3 +1,38 @@
+<script setup lang="ts">
+import {
+  UserCircleIcon,
+  ArrowRightStartOnRectangleIcon,
+  ArrowRightEndOnRectangleIcon,
+  WrenchScrewdriverIcon,
+  GlobeAltIcon
+} from "@heroicons/vue/24/outline"
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth"
+import { useCurrentUser, useFirebaseAuth } from "vuefire"
+
+const auth = useFirebaseAuth()!
+const googleAuthProvider = new GoogleAuthProvider()
+
+const user = useCurrentUser()
+const editorStore = useEditorStore()
+const error = ref(null)
+
+const login = () => {
+  signInWithPopup(auth, googleAuthProvider).catch((reason) => {
+    console.error("Failed signinRedirect", reason)
+    error.value = reason
+  })
+}
+const logout = () => {
+  auth.signOut()
+}
+const toggleAdminMode = () => {
+  editorStore.isEditing = !editorStore.isEditing
+}
+const openV1Site = () => {
+  window.open("https://v1.bichbui.com", "_blank")
+}
+</script>
+
 <template>
   <div class="flex items-center">
     <HeadlessMenu as="div" class="relative inline-block text-left">
@@ -39,6 +74,10 @@
                 <WrenchScrewdriverIcon class="h-6 w-6"></WrenchScrewdriverIcon>
                 <span> Admin mode </span>
               </UserMenuItem>
+              <UserMenuItem @click="openV1Site()">
+                <GlobeAltIcon class="h-6 w-6"></GlobeAltIcon>
+                <span> Open v1 Website </span>
+              </UserMenuItem>
             </div>
 
             <div class="px-1 py-1">
@@ -53,35 +92,3 @@
     </HeadlessMenu>
   </div>
 </template>
-
-<script setup lang="ts">
-import {
-  UserCircleIcon,
-  ArrowRightStartOnRectangleIcon,
-  ArrowRightEndOnRectangleIcon,
-  WrenchScrewdriverIcon
-} from "@heroicons/vue/24/outline"
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth"
-import { useCurrentUser, useFirebaseAuth } from "vuefire"
-
-const auth = useFirebaseAuth()! // only exists on client side
-const user = useCurrentUser()
-const googleAuthProvider = new GoogleAuthProvider()
-const error = ref(null)
-
-const login = () => {
-  signInWithPopup(auth, googleAuthProvider).catch((reason) => {
-    console.error("Failed signinRedirect", reason)
-    error.value = reason
-  })
-}
-
-const logout = () => {
-  auth.signOut()
-}
-
-const editorStore = useEditorStore()
-const toggleAdminMode = () => {
-  editorStore.isEditing = !editorStore.isEditing
-}
-</script>
