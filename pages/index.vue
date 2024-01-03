@@ -4,7 +4,7 @@ import { useSessionStorage } from "@vueuse/core"
 const photoStore = usePhotoStore()
 const albums = computed(() => useAlbumsStore().albums)
 const shuffledPhotos = useSessionStorage("photos", [])
-const photoCount = ref(12)
+const PHOTO_COUNT = 8
 
 // Merge all photos in all albums together and shuffle them
 const shuffleAllPhotos = () => {
@@ -15,11 +15,11 @@ const shuffleAllPhotos = () => {
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value)
+    .slice(0, PHOTO_COUNT)
 }
 
 const morePhotos = () => {
   window.scrollTo({ top: 0, behavior: "smooth" })
-
   shuffledPhotos.value = shuffleAllPhotos()
 }
 const truncatedPhotos = computed(() => {
@@ -27,7 +27,7 @@ const truncatedPhotos = computed(() => {
   if (photosFromSessionStorage?.length === 0) {
     shuffledPhotos.value = shuffleAllPhotos()
   }
-  return shuffledPhotos.value?.slice(0, photoCount.value)
+  return shuffledPhotos.value
 })
 const active = useState()
 </script>
@@ -43,7 +43,7 @@ const active = useState()
       </NuxtLink>
     </figure>
   </div>
-  <div class="mt-8 flex w-full justify-center">
+  <div class="mt-8 flex w-full justify-center" v-if="truncatedPhotos?.length > 0">
     <button class="m-auto rounded-md border border-primary px-3 py-2 text-xl hover:bg-primary/10" @click="morePhotos()">
       {{ $t("home.more") }}
     </button>

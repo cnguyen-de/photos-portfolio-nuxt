@@ -4,5 +4,5 @@ defineProps<{
 }>()
 </script>
 <template>
-  <NuxtImg :src="url" class="w-full rounded-xl hover:opacity-90" />
+  <NuxtImg :src="url" class="w-full rounded-xl hover:opacity-90" placeholder="/image.svg" />
 </template>

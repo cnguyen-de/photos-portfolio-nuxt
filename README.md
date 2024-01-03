@@ -1,9 +1,8 @@
 # TODO
 
 - Mobile navbar 🚧 WIP
-- Observer API Infinite Scroll on index page
 - fullscreen photo viewer: back to album, navigation buttons
-- Album page (id) -> show album title, description, breadcrumb
+- Album page (id) -> breadcrumb (?)
 - editor mode
 
 # Photos Portfolio for bichbui.com
